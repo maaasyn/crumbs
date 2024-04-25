@@ -1,51 +1,40 @@
+function getRandomColor() {
+  let letters = "0123456789ABCDEF";
+  let color = "#";
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
 console.log("Content script loaded");
 
-chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-  if (request.action === "potato") {
-    console.log("Connect button was clicked!");
-    console.log({ windowEthereum: window.ethereum });
+// Inbox for messages from the background script
+chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
+  console.log({ message });
 
-    if (window.ethereum) {
-      sendResponse({ result: "[[Content.js]]#window.ethereum exists" });
-    } else {
-      sendResponse({
-        result: "[[Content.js]]#window.ethereum does not exists",
-      });
-    }
-    //? fallback
-    sendResponse({ result: "Message received from content.js" });
+  if (message.action === "toContent") {
+    // background color change
+    document.body.style.backgroundColor = getRandomColor();
   }
+
+  if (message.action === "toggleMaskot") {
+    // Toggle the maskot
+    console.log("Toggling Maskot... 3/3");
+    const img = document.createElement("img");
+    img.src = chrome.runtime.getURL("icons/maskot.svg");
+    img.style.position = "fixed";
+    img.style.bottom = "0";
+    img.style.right = "0";
+    img.style.width = "100px";
+    img.style.height = "100px";
+    img.style.zIndex = "9999";
+    img.style.transition = "all 0.5s ease";
+    img.style.transform = "rotate(0deg)";
+    document.body.appendChild(img);
+  }
+
+  sendResponse({ result: "Message received from content.js" });
 });
 
-// const port = chrome.runtime.connect();
-
-// port.onMessage.addListener(function (msg) {
-//   if (msg.action === "potato") {
-//     console.log("Connect!");
-//   }
-//   if (msg.action === "connect") {
-//     console.log({ windowEthereum: window.ethereum });
-//     if (window.ethereum) {
-//       window.ethereum
-//         .request({ method: "eth_requestAccounts" })
-//         .then((accounts) => {
-//           port.postMessage({ account: accounts[0] });
-//           window.ethereum
-//             .request({ method: "eth_chainId" })
-//             .then((chainId) => {
-//               port.postMessage({ chainId });
-//             })
-//             .catch((error) => {
-//               console.error("Error getting chain ID:", error);
-//               port.postMessage({ error: error.message });
-//             });
-//         })
-//         .catch((error) => {
-//           console.error("Error getting accounts:", error);
-//           port.postMessage({ error: error.message });
-//         });
-//     } else {
-//       port.postMessage({ error: "No Ethereum provider detected" });
-//     }
-//   }
-// });
+// chrome-extension://hcbehmiencpobjbfllbjjebfejnffaih/popup.html

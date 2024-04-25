@@ -1,8 +1,18 @@
 {
     "manifest_version": 3,
-    "name": "My Wallet Extension",
+    "name": "Scrumbs",
     "version": "1.0",
-    "description": "An extension to interact with Ethereum wallets",
+    "description": "Fck the cookies, only scrumbs.",
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "icons/maskot.svg"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ],
     "permissions": [
         "clipboardWrite",
         "notifications",
@@ -13,9 +23,12 @@
         "alarms",
         "clipboardWrite",
         "notifications",
+        "tabs",
         "scripting",
+        "webNavigation",
         "storage",
-        "webRequest"
+        "webRequest",
+        "browserAction"
     ],
     "action": {
         "default_popup": "popup.html",
