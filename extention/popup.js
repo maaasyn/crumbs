@@ -56,8 +56,8 @@ port.onMessage.addListener(function (msg) {
   }
 });
 
-chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-  connectButton.addEventListener("click", function () {
+connectButton.addEventListener("click", function () {
+  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     chrome.scripting
       .executeScript({
         target: { tabId: tabs[0].id, allFrames: true },
