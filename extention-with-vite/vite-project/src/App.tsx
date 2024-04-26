@@ -13,7 +13,6 @@ declare global {
 }
 
 function App() {
-  const [count, setCount] = useState(0);
   const [block, setBlock] = useState(0n);
   const [account, setAccount] = useState("not connected");
   const [chain, setChain] = useState("not connected");
@@ -67,14 +66,11 @@ function App() {
     <>
       <div>
         <a href="https://github.com/maaasyn" target="_blank">
-          <p className="logo react">🍪</p>
+          <span className="logo react">🍪</span>
         </a>
       </div>
       <h1>Crumbs</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
         <button onClick={fetchLatestBlock}>Fetch Latest Block</button>
 
         <button onClick={() => handleConnectOnClick()}>Connect</button>

@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
-    "name": "CRXJS React Vite Example",
-    "version": "1.0.0",
+    "name": "Crumbs alfa",
+    "version": "0.0.1",
     "permissions": [
         "clipboardWrite",
         "notifications",
