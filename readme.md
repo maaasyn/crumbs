@@ -34,6 +34,6 @@ To view the comment content, we need a hash to value dictionary, which is stored
 
 ## Components of the Scrumbs
 
-- Contracts [repo](todo://)
-- Website [repo](todo://)
-- Extension [repo](todo://)
+- Contracts [crumbs-contracts](https://github.com/maaasyn/crumbs-contracts)
+- Offchain [crumbs-offchain](https://github.com/maaasyn/crumbs-offchain)
+- Extension [crumbs-extention](https://github.com/maaasyn/crumbs-extention)
