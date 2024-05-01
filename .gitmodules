@@ -1,0 +1,3 @@
+[submodule "crumbs-contracts"]
+	path = crumbs-contracts
+	url = https://github.com/maaasyn/crumbs-contracts
