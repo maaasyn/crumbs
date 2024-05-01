@@ -1,9 +1,9 @@
-[submodule "crumbs-contracts"]
-	path = crumbs-contracts
+[submodule "contracts"]
+	path = contracts
 	url = https://github.com/maaasyn/crumbs-contracts
-[submodule "crumbs-offchain"]
-	path = crumbs-offchain
+[submodule "offchain"]
+	path = offchain
 	url = https://github.com/maaasyn/crumbs-offchain
-[submodule "crumbs-extention"]
-	path = crumbs-extention
+[submodule "extention"]
+	path = extention
 	url = https://github.com/maaasyn/crumbs-extention
