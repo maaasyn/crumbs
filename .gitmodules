@@ -4,3 +4,6 @@
 [submodule "crumbs-offchain"]
 	path = crumbs-offchain
 	url = https://github.com/maaasyn/crumbs-offchain
+[submodule "crumbs-extention"]
+	path = crumbs-extention
+	url = https://github.com/maaasyn/crumbs-extention
