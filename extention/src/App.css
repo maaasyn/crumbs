@@ -1,0 +1,56 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  /* height: 6em; */
+  padding: 0.1em;
+  display: inline-block;
+  will-change: filter;
+  font-size: 10em;
+  transition: filter 1s;
+  animation: logo-spin infinite 20s linear;
+  cursor: pointer;
+  user-select: none;
+}
+
+.size:hover {
+  transform: scale(1.2);
+}
+
+.inactive {
+  /* grayscale */
+  filter: grayscale(100%) drop-shadow(0 0 2rem #000000aa);
+}
+
+.inactive:hover {
+  filter: grayscale(90%) drop-shadow(0 0 2rem #fffff0aa);
+}
+
+.active {
+  filter: drop-shadow(0 0 2rem #ffff00aa); /* Yellow light */
+}
+
+.active:hover {
+  filter: drop-shadow(0 0 2rem #ffff00); /* Yellow light */
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}

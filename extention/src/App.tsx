@@ -17,10 +17,31 @@ function App() {
   const [account, setAccount] = useState("not connected");
   const [chain, setChain] = useState("not connected");
   const client = createPublicClient({ chain: sepolia, transport: http() });
+  const [mascotVisible, setMascotVisible] = useState(false);
+
+  useEffect(() => {
+    chrome.storage.sync.get("mascotVisible", ({ mascotVisible }) => {
+      setMascotVisible(mascotVisible);
+    });
+  }, []);
 
   useEffect(() => {
     fetchLatestBlock();
   }, []);
+
+  // useEffect(() => {
+  //   window.addEventListener("eip6963:announceProvider", (event) => {
+  //     console.log(event);
+  //   });
+
+  //   window.dispatchEvent(new Event("eip6963:requestProvider"));
+
+  //   return () => {
+  //     window.removeEventListener("eip6963:announceProvider", (event) => {
+  //       console.log(event);
+  //     });
+  //   };
+  // }, []);
 
   const fetchLatestBlock = async () => {
     try {
@@ -64,28 +85,30 @@ function App() {
 
   return (
     <>
-      <div>
-        <a href="https://github.com/maaasyn" target="_blank">
-          <span className="logo react">🍪</span>
-        </a>
-      </div>
       <h1>Crumbs</h1>
+
+      <div>
+        {/* <a href="https://github.com/maaasyn" target="_blank"> */}
+        <p>Click the 🍪 to reveal the beast</p>
+        <span
+          className={`size logo ${mascotVisible ? "active" : "inactive"} react`}
+          onClick={() => {
+            setMascotVisible((val) => {
+              chrome.storage.sync.set({ mascotVisible: !val });
+              return !val;
+            });
+          }}>
+          🍪
+        </span>
+        {/* </a> */}
+      </div>
       <div className="card">
         <button onClick={fetchLatestBlock}>Fetch Latest Block</button>
-
         <button onClick={() => handleConnectOnClick()}>Connect</button>
-
         <p>Account: {account}</p>
-
         <p>Chain: {chain}</p>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
         <p>Latest block: {block.toString()}</p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   );
 }

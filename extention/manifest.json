@@ -1,18 +1,7 @@
 {
     "manifest_version": 3,
-    "name": "Scrumbs",
-    "version": "1.0",
-    "description": "Fck the cookies, only scrumbs.",
-    "web_accessible_resources": [
-        {
-            "resources": [
-                "icons/maskot.svg"
-            ],
-            "matches": [
-                "<all_urls>"
-            ]
-        }
-    ],
+    "name": "Crumbs alfa",
+    "version": "0.0.1",
     "permissions": [
         "clipboardWrite",
         "notifications",
@@ -30,15 +19,12 @@
         "webRequest",
         "browserAction"
     ],
+    "host_permissions": [
+        "https://*/*",
+        "http://*/*"
+    ],
     "action": {
-        "default_popup": "popup.html",
-        "default_icon": {
-            "16": "icons/all-sizes/favicon-16x16.png",
-            "32": "icons/all-sizes/favicon-32x32.png"
-        }
-    },
-    "background": {
-        "service_worker": "background.js"
+        "default_popup": "index.html"
     },
     "content_scripts": [
         {
@@ -46,16 +32,8 @@
                 "<all_urls>"
             ],
             "js": [
-                "content.js"
+                "src/Content.tsx"
             ]
         }
-    ],
-    "host_permissions": [
-        "https://*/*",
-        "http://*/*"
-    ],
-    "icons": {
-        "16": "icons/all-sizes/favicon-16x16.png",
-        "32": "icons/all-sizes/favicon-32x32.png"
-    }
+    ]
 }
