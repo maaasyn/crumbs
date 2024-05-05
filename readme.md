@@ -19,9 +19,9 @@ cast keccak "https://amazon.com"
 The user can then create a comment on the website by signing the hash of the website and the comment itself.
 
 ```sh
-cast keccak "as a society we outgrew the usefulness of capitalism"
+cast keccak "common jeffrey you can do it"
 
-# returns 0xf959ee04dfdb523c2cb144deb673a6d8a755b0a3a26f39eb1be1a13d9c9bc51a
+# returns 0x5483c75da019b9e9df6e65578e208793759ac3e3e1f4e0fbc9e5b92f85ffa293
 ```
 
 The user can then submit the comment to the contract by calling the `storeComment(bytes32 _url, bytes32 _commentHash)` function with the hash of the website and the comment.
@@ -32,8 +32,27 @@ Technically, there is no reason why you shouldn't be able to send the commitment
 
 To view the comment content, we need a hash to value dictionary, which is stored offchain.
 
-## Components of the Scrumbs
+## Components of the Crumbs
 
 - Contracts [crumbs-contracts](https://github.com/maaasyn/crumbs-contracts)
 - Offchain [crumbs-offchain](https://github.com/maaasyn/crumbs-offchain)
 - Extension [crumbs-extention](https://github.com/maaasyn/crumbs-extention)
+
+### Basic flow
+
+Turn on the beast.
+
+![extention pop up](./attachments/extention-popup.png)
+
+The beast should be visible on the left bottom corner.
+
+![beast](./attachments/beast.png)
+
+Click on the beast to open the extention.
+
+![beast pop up](./attachments/chatty-beast.png)
+
+Send a message and see what happens.
+As of 2024-05-05 it requires metamask to be installed and everything is on eth sepolia.
+
+After submitting the message, the message will be stored on chain and can be viewed by anyone.
