@@ -1,6 +1,3 @@
-[submodule "extention"]
-	path = extention
-	url = https://github.com/maaasyn/crumbs-extention
 [submodule "contracts"]
 	path = contracts
 	url = https://github.com/maaasyn/crumbs-contracts
