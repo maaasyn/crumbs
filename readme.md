@@ -9,7 +9,7 @@ All comments commitment is pernamently stored on chain and can be view by anyone
 
 [Crumbs website](https://crumbs.eurekonomicon.com/)
 
-As of 2024-05-05 extention is not on the chrome extentions store, so you will have to load it manually.
+[Chrome store extention](https://chromewebstore.google.com/detail/crumbs/hboepmaapmajfbafkkokfijpkjninbcm?authuser=0&hl=pl)
 
 ## How it works
 
@@ -44,17 +44,11 @@ To view the comment content, we need a hash to value dictionary, which is stored
 
 ### Basic flow
 
-Turn on the beast.
+Get extention installed.
 
-![extention pop up](./attachments/extention-popup.png)
+![extention](./attachments/crumbs-cropped.gif)
 
-The beast should be visible on the left bottom corner.
-
-![beast](./attachments/beast.png)
-
-Click on the beast to open the extention.
-
-![beast pop up](./attachments/chatty-beast.png)
+Connect wallet and your account.
 
 Send a message and see what happens.
 As of 2024-05-05 it requires metamask to be installed and everything is on eth sepolia.
