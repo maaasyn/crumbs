@@ -46,8 +46,8 @@ To view the comment content, we need a hash to value dictionary, which is stored
 
 Get extention installed.
 
-<p align="center">
-  <img src="./attachments/crumbs-cropped.gif" width="200px" align="center" alt="animated worflow with crumbs extention" />
+<p>
+  <img src="./attachments/crumbs-cropped.gif" width="300px" align="center" alt="animated worflow with crumbs extention" />
 </p>
 
 Connect wallet and your account.
