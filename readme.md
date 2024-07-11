@@ -1,4 +1,12 @@
-# Crumbs
+<p align="center">
+  <img src="./attachments/crumbs-logo.png" alt="Crumbs logo" width="100">
+</p>
+
+<h1 align="center">Crumbs</h1>
+
+<p align="center">
+  <i>Crumbs is dapp for commenting everything, everywhere.</i>
+</p>
 
 ## Abstract
 
